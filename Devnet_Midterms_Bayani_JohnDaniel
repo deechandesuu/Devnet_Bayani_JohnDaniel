@@ -3,10 +3,10 @@ Midterm Practical Exam — Network Device Inventory Tool
 Student: Bayani, John Daniel G.
 """
 
-devices = []  # starts empty — the user adds devices as the program runs
+devices = []
 
+def display_menu():
 
-def display_menu(): 
  print("=== Network Device Inventory ===")
  print("1. Add a device")
  print("2. View all devices")
@@ -14,24 +14,30 @@ def display_menu():
  print("4. Find a device by name")
  print("5. Remove a device by name")
  print("6. Exit")
- pass
 
 def add_device(device_list):
-  
-    
 
-    pass
+    device_list = []
+
+    device = str(input("Enter the name of the device: "))
+    IP = int(input("Enter the IP address of the device: "))
+    status = str(input("Enter the status of the device: "))
+
+    device_list.append(device,IP,status)
+    devices.extend(device_list)
+
 
 def view_devices(device_list):
-    # loop through and print every device — handle empty list
-    pass
+    for x in devices:
+        print(x)
 
 def count_active_inactive(device_list):
     # loop through, count Active vs Inactive, return both
     pass
 
 def find_device(device_list):
-    # ask for a name, search the list, print result or "not found"
+    hanap = str(input("Enter the name of the device that you are looking for: "))
+     # ask for a name, search the list, print result or "not found"
     pass
 
 # BONUS (optional)
@@ -39,25 +45,23 @@ def remove_device(device_list):
     # your code here
     pass
 
-
 def main():
     running = True
     while running:
         choice = display_menu()
-        choice = input("Enter your choice: ")
-    if choice == 1:
+        sagot = input("Enter your choice: ")
+    if sagot == 1:
         add_device()
-    elif choice == 2:
+    elif sagot == 2:
         view_devices()
-    elif choice == 3:
+    elif sagot == 3:
         count_active_inactive()
-    elif choice == 4:
+    elif sagot == 4:
         find_device()
-    elif choice == 5:
+    elif sagot == 5:
         remove_device()
-    elif choice == 6:
+    elif sagot == 6:
         
+
     
-
-
 main()
